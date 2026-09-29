@@ -13,12 +13,12 @@
     :root {
       --bg-dark: #121315;
       --bg-card: #1b1d21;
-      --accent: #c59b27; /* Rich craftsman gold/amber */
+      --accent: #c59b27;
       --accent-hover: #dbad30;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --border-color: #2e3238;
-      --container-width: 1100px;
+      --container-width: 1200px;
     }
 
     * {
@@ -38,10 +38,10 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(18, 19, 21, 0.95);
+      background: rgba(18, 19, 21, 0.96);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border-color);
-      padding: 1.25rem 2rem;
+      padding: 0.85rem 2rem;
     }
 
     .nav-container {
@@ -52,18 +52,17 @@
       justify-content: space-between;
     }
 
-    .brand-logo {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.4rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #fff;
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
       text-decoration: none;
     }
 
-    .brand-logo span {
-      color: var(--accent);
+    .brand-logo-img {
+      max-height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
     }
 
     .nav-links a {
@@ -82,7 +81,7 @@
     /* Hero Section */
     .hero {
       position: relative;
-      padding: 6rem 1.5rem 4rem;
+      padding: 5.5rem 1.5rem 4rem;
       text-align: center;
       background: radial-gradient(circle at top center, rgba(197, 155, 39, 0.12) 0%, rgba(18, 19, 21, 0) 70%);
       border-bottom: 1px solid var(--border-color);
@@ -127,7 +126,7 @@
       color: var(--accent);
       font-weight: 600;
       letter-spacing: 0.5px;
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto 2.5rem;
     }
 
@@ -150,7 +149,7 @@
       transform: translateY(-2px);
     }
 
-    /* Services Grid */
+    /* Widened Services Section */
     .services-section {
       padding: 5rem 1.5rem;
       max-width: var(--container-width);
@@ -174,35 +173,131 @@
       margin-top: 0.5rem;
     }
 
-    .grid {
+    /* Substantially widened service boxes (2-column wide layout) */
+    .services-grid-wide {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 1.75rem;
     }
 
-    .card {
+    @media (max-width: 600px) {
+      .services-grid-wide {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card-wide {
       background-color: var(--bg-card);
       border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent);
       border-radius: 6px;
-      padding: 2rem 1.5rem;
+      padding: 2.2rem 2.2rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-wide:hover {
+      border-color: var(--accent);
+      border-left-color: var(--accent-hover);
+      transform: translateY(-3px);
+    }
+
+    .card-wide h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.6rem;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+
+    .card-wide p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    /* Reference Gallery 4-Column Section */
+    .gallery-section {
+      padding: 4.5rem 1.5rem 5rem;
+      background: #15171a;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .gallery-container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .card:hover {
+    .gallery-item:hover {
       border-color: var(--accent);
-      transform: translateY(-4px);
+      transform: translateY(-3px);
     }
 
-    .card h3 {
+    .gallery-thumb-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 480 / 183;
+      overflow: hidden;
+      background: #0d0e10;
+    }
+
+    .gallery-thumb-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-thumb-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .gallery-meta {
+      padding: 0.85rem 1rem;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .gallery-meta span {
+      display: block;
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-      color: #fff;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
     }
 
     /* Contact Section */
@@ -319,12 +414,19 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header with GitHub Logo Asset -->
   <header>
     <div class="nav-container">
-      <a href="#" class="brand-logo">Galt <span>Customs</span></a>
+      <a href="#" class="brand-link" aria-label="Galt Customs Home">
+        <img 
+          src="https://raw.githubusercontent.com/globalcdn/galtcustoms.com/1fbe10ae5c00e587a949aed4f119c16e1b183676/galtcustomslogo.png" 
+          alt="Galt Customs" 
+          class="brand-logo-img"
+        />
+      </a>
       <nav class="nav-links">
         <a href="#services">Services</a>
+        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -343,28 +445,91 @@
     </div>
   </section>
 
-  <!-- Core Services Section -->
+  <!-- Services Section (Widened & Non-Indenting) -->
   <section class="services-section" id="services">
     <div class="section-title">
       <h2>Craftsmanship & Services</h2>
       <p>Precision execution tailored to residential and commercial projects.</p>
     </div>
-    <div class="grid">
-      <div class="card">
+    <div class="services-grid-wide">
+      <div class="card-wide">
         <h3>General Contracting</h3>
         <p>Complete project supervision and management from planning through structural finish.</p>
       </div>
-      <div class="card">
+      <div class="card-wide">
         <h3>Custom Carpentry</h3>
         <p>Architectural millwork, custom builds, trim, and bespoke woodwork built to exact specifications.</p>
       </div>
-      <div class="card">
+      <div class="card-wide">
         <h3>Construction</h3>
         <p>High-standard ground-up builds and structural additions executed without compromise.</p>
       </div>
-      <div class="card">
+      <div class="card-wide">
         <h3>Remodels</h3>
         <p>Comprehensive interior and exterior renovations that modernize and elevate your space.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reference Gallery 4-Column Section -->
+  <section class="gallery-section" id="work">
+    <div class="gallery-container">
+      <div class="section-title">
+        <h2>Reference Projects</h2>
+        <p>Featured structural concepts, architectural builds, and custom fabrication.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-thumb-wrapper">
+            <img 
+              src="facebook-cover-greyson-joralemon-A1g0oeX29ec-unsplash-480x183.jpg" 
+              alt="Custom Carpentry & Fabrication - Galt Customs"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-meta">
+            <span>Carpentry & Tools</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-thumb-wrapper">
+            <img 
+              src="facebook-cover-henry-co-3coKbdfnAFg-unsplash-480x183.jpg" 
+              alt="General Contracting & Construction - Galt Customs"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-meta">
+            <span>Structural Framing</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-thumb-wrapper">
+            <img 
+              src="facebook-cover-mohd-syahril-khalid-AAswAFHEwfU-unsplash-480x183.jpg" 
+              alt="Architectural Finishes - Galt Customs"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-meta">
+            <span>Precision Finishes</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-thumb-wrapper">
+            <img 
+              src="facebook-cover-r-architecture-uFQOmuz8JVY-unsplash-480x183.jpg" 
+              alt="Modern Remodeling & Design - Galt Customs"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-meta">
+            <span>Modern Remodels</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -380,11 +545,6 @@
           </p>
         </div>
 
-        <!-- 
-          SETUP INSTRUCTIONS:
-          Replace 'YOUR_ACCESS_KEY_HERE' with your Web3Forms access key (or Formspree action URL).
-          Get a free instant key at https://web3forms.com by submitting your destination email.
-        -->
         <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
           <input type="hidden" name="subject" value="New Estimate Request - Galt Customs" />
@@ -438,7 +598,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // AJAX Form Handling
     const form = document.getElementById('contactForm');
     const statusBox = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
