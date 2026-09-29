@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galt Customs | Custom Carpentry & Construction Services</title>
+  <meta name="description" content="Galt Customs - Quality Without Compromise. General Contracting, Custom Carpentry, Construction, and Remodels." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #121315;
+      --bg-card: #1b1d21;
+      --accent: #c59b27; /* Rich craftsman gold/amber */
+      --accent-hover: #dbad30;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: #2e3238;
+      --container-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 19, 21, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.25rem 2rem;
+    }
+
+    .nav-container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .brand-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 6rem 1.5rem 4rem;
+      text-align: center;
+      background: radial-gradient(circle at top center, rgba(197, 155, 39, 0.12) 0%, rgba(18, 19, 21, 0) 70%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    .hero-subtitle-top {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+
+    .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      color: #e5e7eb;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .services-bar {
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background-color: var(--accent);
+      color: #121315;
+      padding: 0.9rem 2.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-cta:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Services Grid */
+    .services-section {
+      padding: 5rem 1.5rem;
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 2rem 1.5rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: #fff;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 5rem 1.5rem;
+      background: #17181c;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .contact-container {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .form-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2.5rem;
+      border-radius: 6px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #d1d5db;
+    }
+
+    label span {
+      color: var(--accent);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: #121315;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--accent);
+      color: #121315;
+      border: none;
+      padding: 1rem;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer p + p {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">Galt <span>Customs</span></a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-subtitle-top">Custom Carpentry & Construction</div>
+      <h1>GALT CUSTOMS</h1>
+      <div class="tagline">QUALITY WITHOUT COMPROMISE</div>
+      <p class="services-bar">
+        General Contracting &bull; Custom Carpentry &bull; Construction &bull; Remodels
+      </p>
+      <a href="#contact" class="btn-cta">Request an Estimate</a>
+    </div>
+  </section>
+
+  <!-- Core Services Section -->
+  <section class="services-section" id="services">
+    <div class="section-title">
+      <h2>Craftsmanship & Services</h2>
+      <p>Precision execution tailored to residential and commercial projects.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>General Contracting</h3>
+        <p>Complete project supervision and management from planning through structural finish.</p>
+      </div>
+      <div class="card">
+        <h3>Custom Carpentry</h3>
+        <p>Architectural millwork, custom builds, trim, and bespoke woodwork built to exact specifications.</p>
+      </div>
+      <div class="card">
+        <h3>Construction</h3>
+        <p>High-standard ground-up builds and structural additions executed without compromise.</p>
+      </div>
+      <div class="card">
+        <h3>Remodels</h3>
+        <p>Comprehensive interior and exterior renovations that modernize and elevate your space.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <div class="form-wrapper">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h2 style="font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Get In Touch</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.4rem;">
+            Fill out the form below to discuss your next project.
+          </p>
+        </div>
+
+        <!-- 
+          SETUP INSTRUCTIONS:
+          Replace 'YOUR_ACCESS_KEY_HERE' with your Web3Forms access key (or Formspree action URL).
+          Get a free instant key at https://web3forms.com by submitting your destination email.
+        -->
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <input type="hidden" name="subject" value="New Estimate Request - Galt Customs" />
+          <input type="hidden" name="from_name" value="Galt Customs Inquiry" />
+          <input type="checkbox" name="botcheck" style="display: none;" />
+
+          <div class="form-group">
+            <label for="name">Name <span>*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Your Full Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span>*</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone <span>*</span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="(555) 000-0000" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Requested</label>
+            <select id="service" name="service">
+              <option value="General Contracting">General Contracting</option>
+              <option value="Custom Carpentry">Custom Carpentry</option>
+              <option value="Construction">Construction</option>
+              <option value="Remodels">Remodels</option>
+              <option value="Other">Other / Consultation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span>*</span></label>
+            <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">Submit Request</button>
+          <div id="formStatus" class="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Galt Customs | Quality Without Compromise</p>
+    <p>General Contracting &bull; Custom Carpentry &bull; Construction &bull; Remodels</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // AJAX Form Handling
+    const form = document.getElementById('contactForm');
+    const statusBox = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async function(e) {
+      if (form.getAttribute('action').includes('web3forms.com')) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        const formData = new FormData(form);
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          const result = await response.json();
+          if (response.ok) {
+            statusBox.className = 'form-status success';
+            statusBox.textContent = 'Thank you! Your message has been sent successfully.';
+            form.reset();
+          } else {
+            statusBox.className = 'form-status';
+            statusBox.style.display = 'block';
+            statusBox.style.color = '#ef4444';
+            statusBox.textContent = result.message || 'Something went wrong. Please try again.';
+          }
+        } catch (err) {
+          statusBox.className = 'form-status';
+          statusBox.style.display = 'block';
+          statusBox.style.color = '#ef4444';
+          statusBox.textContent = 'Error connecting to server. Please try again later.';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Request';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
